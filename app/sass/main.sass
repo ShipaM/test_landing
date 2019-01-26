@@ -1,0 +1,316 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+* 
+	box-sizing: border-box
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	min-height: 1000px
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+	a:hover
+		text-decoration: none
+		color: $white
+	ul, button
+		margin: 0
+		padding: 0
+	button
+		border: none	
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+//header
+.header
+	overflow: auto /* Добавляем полосы прокрутки */
+	background-color: #fff
+	&__topline
+		background-color: $accent
+		position: sticky
+		top: 0
+		z-index: 1000
+	&__phones
+		display: flex
+		justify-content: end
+		margin-right: 15px
+	&__phone
+		font-family: $default-font
+		padding: 14px 25px
+		display: block
+		font-size: $first-size
+		font-weight: bold
+		color: $white
+		text-decoration: none
+		text-transform: uppercase
+	.active
+		color: #bfbd8f
+		background-color: #003113
+///////////////////////////////////////////////////
+		
+// nav.sticky-nav
+.sticky-nav
+	position: sticky//Липкое позиционирование 
+	top: 0 //Положение сверху
+	background-color: #fff
+	z-index: 1000
+	&__main 
+		padding: 10px 0
+		position: relative
+		&::before 
+			content: ""
+			height: 1px
+			width: 100%
+			background-color: #e0e0e0
+			position: absolute
+			top: 10px
+			z-index: 1
+		&::after 
+			content: ""
+			height: 10px
+			width: 100%
+			background-color: #eeeeee
+			position: absolute
+			border-top: 1px solid #e0e0e0
+
+
+				
+
+	.logo
+	display: block
+	&__menu
+		display: flex//выстраиваем элементы меню по горизонтали
+		list-style: none//убираем точки
+	&__item		
+		border-right: 1px solid #e0e0e0
+		position: relative
+		&:first-child
+			border-left: 1px solid #e0e0e0
+		&:hover .sticky-nav__drop-menu
+			//opacity: 1
+			visibility: visible
+			//display: block
+			transition: all 0.3s ease
+		&:hover.sticky-nav__item:nth-child(4) .sticky-nav__link::before
+			//opacity: 1
+			visibility: visible
+			//display: block
+		&:hover.sticky-nav__item .sticky-nav__link
+			background-color: $yellow
+			
+	&__link
+		font-size: 14px
+		text-decoration: none
+		text-transform: uppercase
+		color: #56694e
+		font-weight: bold
+		font-family: $second-font
+		display: block// делаем блочным элементом тег "a"
+		line-height: 1.67
+		background-color: #f6f6f6
+		padding: 30px
+		display: block
+		transition: all 0.3s ease
+		&:before
+			content: ""
+			color: $accent
+			position: absolute
+			bottom: 10px
+			font-family: 'Font Awesome 5 Free';
+			//opacity: 0
+			visibility: hidden
+			//display: none
+		&:hover
+			color: $accent
+			background-color: $yellow
+			transition: all 0.3s ease	
+
+//sticky-nav__drop-menu
+.sticky-nav
+	&__drop-menu
+		position: absolute
+		//opacity: 0	
+		visibility: hidden
+		//display: none
+		z-index: 1
+	&__drop-item
+		border-bottom: 1px solid #e0e0e0
+		list-style: none
+		min-width: 230px
+		position: relative
+		border-left: 1px solid #e0e0e0
+		border-right: 1px solid #e0e0e0
+		&:first-child
+			border-top: 1px solid #e0e0e0
+		&:hover .sticky-nav__dd-menu
+			//opacity: 1
+			visibility: visible
+			//display: block
+			transition: all 0.3s ease
+			top: 0
+	&__drop-link
+		padding: 25px 0 25px 25px
+		text-decoration: none
+		background-color: #f6f6f6
+		display: block
+		font-size: 12px
+		font-weight: bold
+		font-family: $second-font
+		text-transform: uppercase
+		color: #56694e
+		&:hover
+			color: $accent
+			background-color: #fff
+	&__dd-menu
+		position: absolute
+		right: -230px
+		//display: none
+		//opacity: 0
+		visibility: hidden
+	&__dd-item
+		border-bottom: 1px solid #e0e0e0
+		border-left: 1px solid #e0e0e0
+		border-right: 1px solid #e0e0e0
+		list-style: none
+		min-width: 230px
+		&:first-child
+			border-top: 1px solid #e0e0e0
+	&__dd-link
+		padding: 25px 0 25px 25px
+		text-decoration: none
+		background-color: #f6f6f6
+		display: block
+		font-size: 12px
+		font-weight: bold
+		font-family: $second-font
+		text-transform: uppercase
+		color: #56694e
+		&:hover
+			color: $accent
+			background-color: #fff
+
+//banner
+.banner
+	&__navigation
+		width: 45px
+		height: 45px
+		border-radius: 50% 
+		background-color: $yellow
+		display: flex
+		cursor: pointer
+		justify-content: center
+		
+		
+	.slick-arrow
+		position: absolute
+		top: 50%	
+		z-index: 1
+		transform: translate(0, -50%)
+		border: none
+		width: 45px
+		height: 45px
+		border-radius: 50%
+		background-color: $yellow
+		font-size: 0
+		cursor: pointer
+	.slick-next	
+		right: 4.375%
+		&::after
+			content: "\f105"
+			color: $accent
+			font-size: 16px
+			font-family: 'Font Awesome 5 Free';
+	.slick-prev	
+		left: 4.375%
+		&:before
+			content: ""
+			color: $accent
+			font-family: 'Font Awesome 5 Free';
+			font-size: 16px
+			
+
+.slide
+	position: relative
+	&__img 
+  	background-size: cover
+  	background-repeat: no-repeat
+  	background-position: center
+  	height: 100%
+  	min-height: 500px	
+	&__item
+		padding: 150px 0 140px 
+		font-family: $default-font
+		color: #fff
+		position: absolute
+		top: 0
+		left: 18.125%
+		h1
+			font-size: 72px
+			line-height: 0.417
+			text-transform: uppercase
+			margin-bottom: 38px
+		.description
+			max-width: 480px
+			width: 100%
+			line-height: 1.25
+			font-weight: bold
+			margin: 0
+			span
+				text-transform: uppercase
+				color: $yellow
+	&__button
+		background-color: $yellow
+		color: $accent
+
+.btn
+	padding: 12px 50px
+	border-radius: 5px
+	margin-top: 30px
+	font-family: $default-font
+	font-size: 16px
+	cursor: pointer
+
+
+
+
+		
+		
+						
+
+
+
+
+
+
+
+		
+
+		
+@import "media" // Always at the end
+
+

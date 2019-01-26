@@ -1,0 +1,7 @@
+@import "_mixins/font-face";
+
+@include font-face("eurostile-regular", "../fonts/EurostileRegular/EurostileRegular");
+@include font-face("eurostile-bold", "../fonts/EurostileBold/EurostileBold", bold);
+@include font-face("lato-regular", "../fonts/LatoRegular/LatoRegular");
+@include font-face("lato-italic", "../fonts/LatoItalic/LatoItalic");
+@include font-face("lato-bold", "../fonts/LatoBold/LatoBold", bold);
