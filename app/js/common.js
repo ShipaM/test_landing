@@ -5,4 +5,11 @@ $(function() {//функция срабатывает после загузки 
 	$('.banner').slick();
 
 
+	//bannerЬ__slide
+	$('.bannerM__js').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: ".bannerM__navigation_prev",
+		nextArrow: ".bannerM__navigation_next"
+	});
 });

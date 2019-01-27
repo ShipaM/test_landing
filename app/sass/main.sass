@@ -216,16 +216,6 @@ img
 
 //banner
 .banner
-	&__navigation
-		width: 45px
-		height: 45px
-		border-radius: 50% 
-		background-color: $yellow
-		display: flex
-		cursor: pointer
-		justify-content: center
-		
-		
 	.slick-arrow
 		position: absolute
 		top: 50%	
@@ -253,7 +243,7 @@ img
 			font-family: 'Font Awesome 5 Free';
 			font-size: 16px
 			
-
+// slide
 .slide
 	position: relative
 	&__img 
@@ -286,7 +276,9 @@ img
 	&__button
 		background-color: $yellow
 		color: $accent
+///////////////////////////////////////////
 
+//.btn
 .btn
 	padding: 12px 50px
 	border-radius: 5px
@@ -294,9 +286,37 @@ img
 	font-family: $default-font
 	font-size: 16px
 	cursor: pointer
+/////////////////////////////////////////////
 
+.bannerM
+	position: relative
+	&__navigation
+		width: 45px
+		height: 45px
+		border-radius: 50% 
+		background-color: $yellow
+		display: flex
+		cursor: pointer
+		justify-content: center
+		position: absolute
+		z-index: 1
+		top: 50%
+		transform: translate(0, -50%)
+		&_prev
+			left: 4.375%
+		&_next
+			right: 4.375%	
+		&:hover
+			background-color: rgba(251, 234, 5, .8)
+		.fa-angle-right:before,
+		.fa-angle-left:before
+			line-height: 45px
+			font-size: 24px
+			
+    	
 
-
+		
+		
 
 		
 		
